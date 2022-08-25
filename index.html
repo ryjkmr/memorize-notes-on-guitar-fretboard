@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memorize the Notes on the Fretboard</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+
+  <!-- 
+  copyright Ryoji Kimura https://ryjkmr.com
+  The MIT License (MIT) 
+-->
+</head>
+
+<body>
+  <div id="flet-wrapper">
+    <h1 class="title">Memorize the Notes on the Fretboard <span class="credit"><a href="https://ryjkmr.com/">by
+          ryjkmr.com/</a></span></h1>
+
+    <div class="control questionArea">
+      <span id="question">click to start</span>
+    </div>
+
+    <div id="guitar">
+      <table>
+        <tbody>
+          <tr>
+            <td class="str-num "><input type="checkbox" data-str_number="1" class="str-on-off" checked>1</td>
+            <td data-position="0" class="flet-cell str1 pos-0 E"><span class="tone-name"></span></td>
+            <td data-position="1" class="flet-cell str1 pos-1 F"><span class="tone-name"></span></td>
+            <td data-position="2" class="flet-cell str1 pos-2 Fs Gb"><span class="tone-name"></span></td>
+            <td data-position="3" class="flet-cell str1 pos-3 G "><span class="tone-name"></span></td>
+            <td data-position="4" class="flet-cell str1 pos-4 Gs Ab"><span class="tone-name"></span></td>
+            <td data-position="5" class="flet-cell str1 pos-5 A "><span class="tone-name"></span></td>
+            <td data-position="6" class="flet-cell str1 pos-6 As Bb"><span class="tone-name"></span></td>
+            <td data-position="7" class="flet-cell str1 pos-7 B "><span class="tone-name"></span></td>
+            <td data-position="8" class="flet-cell str1 pos-8 C"><span class="tone-name"></span></td>
+            <td data-position="9" class="flet-cell str1 pos-9 Cs Db "><span class="tone-name"></span></td>
+            <td data-position="10" class="flet-cell str1 pos-10 D"><span class="tone-name"></span></td>
+            <td data-position="11" class="flet-cell str1 pos-11 Ds Eb"><span class="tone-name"></span></td>
+            <td data-position="12" class="flet-cell str1 pos-12 E "><span class="tone-name"></span></td>
+            <td data-position="13" class="flet-cell str1 pos-13 F"><span class="tone-name"></span></td>
+            <td data-position="14" class="flet-cell str1 pos-14 Fs Gb"><span class="tone-name"></span></td>
+            <td data-position="15" class="flet-cell str1 pos-15 G "><span class="tone-name"></span></td>
+            <td data-position="16" class="flet-cell str1 pos-16 Gs Ab"><span class="tone-name"></span></td>
+          </tr>
+          <tr>
+            <td class="str-num "><input type="checkbox" data-str_number="2" class="str-on-off" checked>2</td>
+            <td data-position="0" class="flet-cell str2 pos-0 B"><span class="tone-name"></span></td>
+            <td data-position="1" class="flet-cell str2 pos-1 C"><span class="tone-name"></span></td>
+            <td data-position="2" class="flet-cell str2 pos-2 Cs Db"><span class="tone-name"></span></td>
+            <td data-position="3" class="flet-cell str2 pos-3 D "><span class="tone-name"></span></td>
+            <td data-position="4" class="flet-cell str2 pos-4 Ds Eb"><span class="tone-name"></span></td>
+            <td data-position="5" class="flet-cell str2 pos-5 E "><span class="tone-name"></span></td>
+            <td data-position="6" class="flet-cell str2 pos-6 F"><span class="tone-name"></span></td>
+            <td data-position="7" class="flet-cell str2 pos-7 Fs Gb "><span class="tone-name"></span></td>
+            <td data-position="8" class="flet-cell str2 pos-8 G"><span class="tone-name"></span></td>
+            <td data-position="9" class="flet-cell str2 pos-9 Gs Ab "><span class="tone-name"></span></td>
+            <td data-position="10" class="flet-cell str2 pos-10 A"><span class="tone-name"></span></td>
+            <td data-position="11" class="flet-cell str2 pos-11 As Bb"><span class="tone-name"></span></td>
+            <td data-position="12" class="flet-cell str2 pos-12 B pos-mark"><span class="tone-name"></span></td>
+            <td data-position="13" class="flet-cell str2 pos-13 C"><span class="tone-name"></span></td>
+            <td data-position="14" class="flet-cell str2 pos-14 Cs Db"><span class="tone-name"></span></td>
+            <td data-position="15" class="flet-cell str2 pos-15 D "><span class="tone-name"></span></td>
+            <td data-position="16" class="flet-cell str2 pos-16 Ds Eb"><span class="tone-name"></span></td>
+          </tr>
+          <tr>
+            <td class="str-num "><input type="checkbox" data-str_number="3" class="str-on-off" checked>3</td>
+            <td data-position="0" class="flet-cell str3 pos-0 G"><span class="tone-name"></span></td>
+            <td data-position="1" class="flet-cell str3 pos-1 Gs Ab"><span class="tone-name"></span></td>
+            <td data-position="2" class="flet-cell str3 pos-2 A"><span class="tone-name"></span></td>
+            <td data-position="3" class="flet-cell str3 pos-3 As Bb pos-mark"><span class="tone-name"></span></td>
+            <td data-position="4" class="flet-cell str3 pos-4 B"><span class="tone-name"></span></td>
+            <td data-position="5" class="flet-cell str3 pos-5 C pos-mark"><span class="tone-name"></span></td>
+            <td data-position="6" class="flet-cell str3 pos-6 Cs Db"><span class="tone-name"></span></td>
+            <td data-position="7" class="flet-cell str3 pos-7 D pos-mark"><span class="tone-name"></span></td>
+            <td data-position="8" class="flet-cell str3 pos-8 Ds Eb dimm"><span class="tone-name"></span></td>
+            <td data-position="9" class="flet-cell str3 pos-9 E pos-mark dimm"><span class="tone-name"></span></td>
+            <td data-position="10" class="flet-cell str3 pos-10 F"><span class="tone-name"></span></td>
+            <td data-position="11" class="flet-cell str3 pos-11 Fs Gb"><span class="tone-name"></span></td>
+            <td data-position="12" class="flet-cell str3 pos-12 G "><span class="tone-name"></span></td>
+            <td data-position="13" class="flet-cell str3 pos-13 Gs Ab"><span class="tone-name"></span></td>
+            <td data-position="14" class="flet-cell str3 pos-14 A"><span class="tone-name"></span></td>
+            <td data-position="15" class="flet-cell str3 pos-15 As Bb pos-mark"><span class="tone-name"></span></td>
+            <td data-position="16" class="flet-cell str3 pos-16 B"><span class="tone-name"></span></td>
+          </tr>
+          <tr>
+            <td class="str-num "><input type="checkbox" data-str_number="4" class="str-on-off" checked>4</td>
+            <td data-position="0" class="flet-cell str4 pos-0 D"><span class="tone-name"></span></td>
+            <td data-position="1" class="flet-cell str4 pos-1 Ds Eb"><span class="tone-name"></span></td>
+            <td data-position="2" class="flet-cell str4 pos-2 E"><span class="tone-name"></span></td>
+            <td data-position="3" class="flet-cell str4 pos-3 F pos-mark"><span class="tone-name"></span></td>
+            <td data-position="4" class="flet-cell str4 pos-4 Fs Gb"><span class="tone-name"></span></td>
+            <td data-position="5" class="flet-cell str4 pos-5 G pos-mark"><span class="tone-name"></span></td>
+            <td data-position="6" class="flet-cell str4 pos-6 Gs Ab"><span class="tone-name"></span></td>
+            <td data-position="7" class="flet-cell str4 pos-7 A pos-mark"><span class="tone-name"></span></td>
+            <td data-position="8" class="flet-cell str4 pos-8 As Bb"><span class="tone-name"></span></td>
+            <td data-position="9" class="flet-cell str4 pos-9 B pos-mark"><span class="tone-name"></span></td>
+            <td data-position="10" class="flet-cell str4 pos-10 C"><span class="tone-name"></span></td>
+            <td data-position="11" class="flet-cell str4 pos-11 Cs Db"><span class="tone-name"></span></td>
+            <td data-position="12" class="flet-cell str4 pos-12 D "><span class="tone-name"></span></td>
+            <td data-position="13" class="flet-cell str4 pos-13 Ds Eb"><span class="tone-name"></span></td>
+            <td data-position="14" class="flet-cell str4 pos-14 E"><span class="tone-name"></span></td>
+            <td data-position="15" class="flet-cell str4 pos-15 F pos-mark"><span class="tone-name"></span></td>
+            <td data-position="16" class="flet-cell str4 pos-16 Fs Gb"><span class="tone-name"></span></td>
+          </tr>
+          <tr>
+            <td class="str-num "><input type="checkbox" data-str_number="5" class="str-on-off" checked>5</td>
+            <td data-position="0" class="flet-cell str5 pos-0 A"><span class="tone-name"></span></td>
+            <td data-position="1" class="flet-cell str5 pos-1 As Bb"><span class="tone-name"></span></td>
+            <td data-position="2" class="flet-cell str5 pos-2 B"><span class="tone-name"></span></td>
+            <td data-position="3" class="flet-cell str5 pos-3 C "><span class="tone-name"></span></td>
+            <td data-position="4" class="flet-cell str5 pos-4 Cs Db"><span class="tone-name"></span></td>
+            <td data-position="5" class="flet-cell str5 pos-5 D "><span class="tone-name"></span></td>
+            <td background="flet.png" data-position="6" class="flet-cell str5 pos-6 Ds Eb"><span
+                class="tone-name"></span></td>
+            <td data-position="7" class="flet-cell str5 pos-7 E "><span class="tone-name"></span></td>
+            <td data-position="8" class="flet-cell str5 pos-8 F"><span class="tone-name"></span></td>
+            <td data-position="9" class="flet-cell str5 pos-9 Fs Gb "><span class="tone-name"></span></td>
+            <td data-position="10" class="flet-cell str5 pos-10 G"><span class="tone-name"></span></td>
+            <td data-position="11" class="flet-cell str5 pos-11 Gs Ab"><span class="tone-name"></span></td>
+            <td data-position="12" class="flet-cell str5 pos-12 A pos-mark"><span class="tone-name"></span></td>
+            <td data-position="13" class="flet-cell str5 pos-13 As Bb"><span class="tone-name"></span></td>
+            <td data-position="14" class="flet-cell str5 pos-14 B"><span class="tone-name"></span></td>
+            <td data-position="15" class="flet-cell str5 pos-15 C "><span class="tone-name"></span></td>
+            <td data-position="16" class="flet-cell str5 pos-16 Cs Db"><span class="tone-name"></span></td>
+          </tr>
+          <tr>
+            <td class="str-num "><input type="checkbox" data-str_number="6" class="str-on-off" checked>6</td>
+            <td data-position="0" class="flet-cell str6 pos-0 E"><span class="tone-name"></span></td>
+            <td data-position="1" class="flet-cell str6 pos-1 F"><span class="tone-name"></span></td>
+            <td data-position="2" class="flet-cell str6 pos-2 Fs Gb"><span class="tone-name"></span></td>
+            <td data-position="3" class="flet-cell str6 pos-3 G "><span class="tone-name"></span></td>
+            <td data-position="4" class="flet-cell str6 pos-4 Gs Ab"><span class="tone-name"></span></td>
+            <td data-position="5" class="flet-cell str6 pos-5 A "><span class="tone-name"></span></td>
+            <td data-position="6" class="flet-cell str6 pos-6 As Bb"><span class="tone-name"></span></td>
+            <td data-position="7" class="flet-cell str6 pos-7 B "><span class="tone-name"></span></td>
+            <td data-position="8" class="flet-cell str6 pos-8 C"><span class="tone-name"></span></td>
+            <td data-position="9" class="flet-cell str6 pos-9 Cs Db "><span class="tone-name"></span></td>
+            <td data-position="10" class="flet-cell str6 pos-10 D"><span class="tone-name"></span></td>
+            <td data-position="11" class="flet-cell str6 pos-11 Ds Eb"><span class="tone-name"></span></td>
+            <td data-position="12" class="flet-cell str6 pos-12 E "><span class="tone-name"></span></td>
+            <td data-position="13" class="flet-cell str6 pos-13 F"><span class="tone-name"></span></td>
+            <td data-position="14" class="flet-cell str6 pos-14 Fs Gb"><span class="tone-name"></span></td>
+            <td data-position="15" class="flet-cell str6 pos-15 G "><span class="tone-name"></span></td>
+            <td data-position="16" class="flet-cell str6 pos-16 Gs Ab"><span class="tone-name"></span></td>
+          </tr>
+          <tr>
+            <td class="str-num "><input type="checkbox" value="" class="all-on-off" checked>all</td>
+            <td class="flet-num even pos-open"><input type="checkbox"  value="0" class="flet-on-off" checked>0</td>
+            <td class="flet-num odd"><input type="checkbox" value="1" class="flet-on-off" checked>1</td>
+            <td class="flet-num even"><input type="checkbox" value="2" class="flet-on-off" checked>2 </td>
+            <td class="flet-num odd"><input type="checkbox" value="3" class="flet-on-off" checked>3 </td>
+            <td class="flet-num even"><input type="checkbox" value="4" class="flet-on-off" checked>4 </td>
+            <td class="flet-num odd"><input type="checkbox" value="5" class="flet-on-off" checked>5 </td>
+            <td class="flet-num even"><input type="checkbox" value="6" class="flet-on-off" checked>6 </td>
+            <td class="flet-num odd"><input type="checkbox" value="7" class="flet-on-off" checked>7 </td>
+            <td class="flet-num even"><input type="checkbox" value="8" class="flet-on-off" checked>8 </td>
+            <td class="flet-num odd"><input type="checkbox" value="9" class="flet-on-off" checked>9 </td>
+            <td class="flet-num even"><input type="checkbox" value="10" class="flet-on-off" checked>10</td>
+            <td class="flet-num odd"><input type="checkbox" value="11" class="flet-on-off" checked>11</td>
+            <td class="flet-num even"><input type="checkbox" value="12" class="flet-on-off" checked>12</td>
+            <td class="flet-num odd"><input type="checkbox" value="13" class="flet-on-off" checked>13</td>
+            <td class="flet-num even"><input type="checkbox" value="14" class="flet-on-off" checked>14</td>
+            <td class="flet-num odd"><input type="checkbox" value="15" class="flet-on-off" checked>15</td>
+            <td class="flet-num even"><input type="checkbox" value="16" class="flet-on-off" checked>16</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="control">
+      <label for="disp-sharp"><input type="radio" class="radio-button select-display-type" id="disp-sharp"
+          name="disp-type" value="sharp">
+        "#"</label>
+      <label for="disp-flat"><input type="radio" class="radio-button select-display-type" id="disp-flat"
+          name="disp-type" value="flat" checked>
+        "b"</label>
+      <label for="showToneName"><input type="checkbox" name="showToneName" id="showToneName" class="checkeboxlg" />show tone name</label>
+    </div>
+    <div class="control">
+      <button id="startBtn" class="btn_below">practice to tempo</button>
+      <button id="stopBtn" class="btn_below" disabled>stop</button>
+    </div>
+    <div class="control">
+      <span class="tempo_label">tempo:</span><output id="tempo_disp">120</output><input type="range" value="120"
+        min="50" max="250" step="1" id="tempo_slider" class="form-range mx-3">
+    </div>
+    <div id="keep_area">
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

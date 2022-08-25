@@ -1,0 +1,227 @@
+#flet-wrapper {
+  margin-top: 50px;
+  margin-left: 3%;
+  width: 90%;
+}
+
+table {
+  width: 100%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+table, td, th {
+  border-right: 2px solid gray;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+td, th {
+  padding: 3px;
+  width: 60px;
+  height: 50px;
+  user-select: none;
+}
+
+td.str1:not(.flet-num, .pos-mark, .pos-0, .str-num) {
+  background: url("./pics/flet-str7.png") left bottom no-repeat;
+  background-size: 100% 100%;
+}
+
+td.str2:not(.flet-num, .pos-mark, .pos-0, .str-num) {
+  background: url("./pics/flet-str2.png");
+  background-size: 100% 100%;
+}
+
+td.str3:not(.flet-num, .pos-mark, .pos-0, .str-num) {
+  background: url("./pics/flet-str3.png");
+  background-size: 100% 100%;
+}
+
+td.str4:not(.flet-num, .pos-mark, .pos-0, .str-num) {
+  background: url("./pics/flet-str4.png");
+  background-size: 100% 100%;
+}
+
+td.str5:not(.flet-num, .pos-mark, .pos-0, .str-num) {
+  background: url("./pics/flet-str5.png");
+  background-size: 100% 100%;
+}
+
+td.str6:not(.flet-num, .pos-mark, .pos-0, .str-num) {
+  background: url("./pics/flet-str6.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+
+td.pos-0.str1 {
+  background: url("./pics/flet-str1-pos0.png") right bottom no-repeat;
+  background-size: 100% 100%;
+}
+
+td.pos-0.str2 {
+  background: url("./pics/flet-str2-pos0.png") right top;
+  background-size: 100% 100%;
+}
+
+td.pos-0.str3 {
+  background: url("./pics/flet-str3-pos0.png") right top;
+  background-size: 100% 100%;
+}
+
+td.pos-0.str4 {
+  background: url("./pics/flet-str4-pos0.png") right top;
+  background-size: 100% 100%;
+}
+
+td.pos-0.str5 {
+  background: url("./pics/flet-str5-pos0.png") right top;
+  background-size: 100% 100%;
+}
+
+td.pos-0.str6 {
+  background: url("./pics/flet-str6-pos0.png") right top no-repeat;
+  background-size: 100% 100%;
+}
+
+.dimm1, .dimm2 {
+  /* background: linear-gradient(to bottom, white 0%, white 46%, lightgray 47%, lightgray 53%, white 54%, white 100%) !important; */
+  /* background-size: 100% 100%; */
+  opacity: 0.5;
+}
+
+.pos-mark.str3 {
+  background: url("./pics/pos-mark1-upper.png") left bottom;
+  background-size: 100% 100%;
+}
+
+.pos-mark.str4 {
+  background: url("./pics/pos-mark1-lower.png") left bottom;
+  background-size: 100% 100%;
+}
+
+.pos-mark.str2 {
+  background: url("./pics/pos-mark2-upper.png") left bottom;
+  background-size: 100% 100%;
+}
+
+.pos-mark.str5 {
+  background: url("./pics/pos-mark2-upper.png") left bottom;
+  background-size: 100% 100%;
+}
+
+
+
+.dimm1 span, .dimm2 span {
+  visibility: hidden !important;
+}
+
+.even {
+  background-color: #707070;
+}
+
+.odd {
+  background-color: #1d1d1d;
+}
+
+.flet-num {
+  height: 25px;
+  text-align: center;
+  color: white;
+  font-size: large;
+}
+
+.flet-cell {
+
+  text-align: center;
+  color: red;
+  font-size: xx-large;
+  font-weight: bold;
+  text-shadow:
+    5px 5px 5px white, -5px -5px 5px white,
+    -5px 5px 5px white, 5px -5px 5px white;
+
+}
+
+.pos-open, .pos-0, .str-num {
+  width: 30px;
+  text-align: right;
+  border-right: 7px slid black;
+}
+
+.pos-mark {
+  background-color: #818181;
+}
+
+.str1 {
+  border-top: 3px solid gray;
+}
+
+#question {
+  font-size: 300%;
+  text-align: center;
+}
+
+.control {
+  font-size: xx-large;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+label {
+  display: inline-block;
+}
+
+.radio-button {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 5px;
+  transform: scale(2.5);
+  vertical-align: 25%;
+}
+
+
+#key-input {
+  width: 2em;
+  font-size: 200%;
+}
+
+.btn_below {
+  margin: 10px;
+  font-size: xx-large;
+}
+
+/* #ChordName {
+  margin-left: 50px;
+  font-size: xx-large;
+} */
+
+/* .keeped-flet {
+  margin-top: 30px;
+} */
+
+.credit {
+  font-size: medium;
+}
+
+input[type=checkbox]:not(.checkeboxlg) {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+.checkeboxlg {
+  transform: scale(2.5);
+  margin: 0px 20px 0px 20px;
+  vertical-align: 25%;
+}
+
+.questionArea {
+  height: 100px;
+  text-align: center;
+}
+
+#tempo_slider {
+  width: 70%;
+  margin-left: 30px;
+}
