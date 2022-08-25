@@ -151,6 +151,7 @@ $(function () {
 
 
   function drawToneName() {
+    console.log($("input[name=disp-type]:checked").val());
     if ($("input[name=disp-type]:checked").val() == "flat") {
       for (let k of key_flat) {
         $("." + k + " span").text(k);
@@ -166,18 +167,18 @@ $(function () {
   $("#showToneName").change(function () {
     if ($(this).prop('checked')) {
       $(".tone-name").css("visibility", "visible");
-      setupfreatBoardReaction(false);
+      setupfretBoardReaction(false);
     } else {
       $(".tone-name").css("visibility", "hidden");
-      setupfreatBoardReaction();
+      setupfretBoardReaction();
     };
   });
 
 
   $(".tone-name").css('visibility', 'hidden');
-  setupfreatBoardReaction();
+  setupfretBoardReaction();
 
-  function setupfreatBoardReaction(interactive_mode = true) {
+  function setupfretBoardReaction(interactive_mode = true) {
 
     if (interactive_mode) {
       $(".flet-cell").on("mousedown", function () {
@@ -260,8 +261,11 @@ $(function () {
   });
 
 
-  //表示形式を選択したらタブを作成
-  $('.select-display-type').on("change", drawToneName);
+  //#表示とb表示の切り替え
+  $('.select-display-type').on("change", function () {
+    drawToneName();
+    stopReset();
+  });
 
 
   $('#startBtn').mousedown(function () {
