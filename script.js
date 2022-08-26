@@ -345,9 +345,9 @@ $(function () {
     const popup = $("#popup");
     popup.text(t);
     if (e.type === "mousedown") {
-      popup.offset({ top: e.clientY - popup.height(), left: e.clientX - popup.width() / 2 });
+      popup.offset({ top: e.pageY - popup.height(), left: e.pageX - popup.width() / 2 });
     } else {
-      popup.offset({ top: e.changedTouches[0].clientY - popup.height() * 1.5, left: e.changedTouches[0].clientX - popup.width() / 2 });
+      popup.offset({ top: e.changedTouches[0].pageY - popup.height() * 1.5, left: e.changedTouches[0].pageX - popup.width() / 2 });
     }
     popup.addClass("show");
   }
