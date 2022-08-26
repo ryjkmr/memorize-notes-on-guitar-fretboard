@@ -191,6 +191,7 @@ $(function () {
         guitar_sound.triggerAttackRelease(num_to_sound[_tone_number], "4n", time);
 
         _tone.css('visibility', 'visible');
+        showPopup(e, _tone.text());
         console.log(_tone.text());
         checkAnswer(_tone.text());
         e.preventDefault();
@@ -198,12 +199,14 @@ $(function () {
 
       $(".flet-cell").on("mouseup touchend", function (e) {
         $(this).find("span").css('visibility', 'hidden');
+        hidePopup();
         e.preventDefault();
 
       });
 
       $(".flet-cell").on("mouseleave", function (e) {
         $(this).find("span").css('visibility', 'hidden');
+        hidePopup();
         e.preventDefault();
       });
       return;
@@ -215,9 +218,12 @@ $(function () {
         e.preventDefault();
       });
 
-      $(".flet-cell").off("mouseup");
+      $(".flet-cell").off("mouseup touchend mouseleave");
+      $(".flet-cell").on("mouseup touchend mouseleave", function (e) {
+        hidePopup();
+        e.preventDefault();
+      });
 
-      $(".flet-cell").off("mouseleave");
 
     }
   }
@@ -332,6 +338,23 @@ $(function () {
     $('#tempo_disp').val(tempo);
     Tone.Transport.bpm.value = tempo;
   });
+
+
+  function showPopup(e, t) {
+    console.log("pop");
+    const popup = $("#popup");
+    popup.text(t);
+    if (e.type === "mousedown") {
+      popup.offset({ top: e.clientY - popup.height(), left: e.clientX - popup.width() / 2 });
+    } else {
+      popup.offset({ top: e.changedTouches[0].clientY - popup.height() * 1.5, left: e.changedTouches[0].clientX - popup.width() / 2 });
+    }
+    popup.addClass("show");
+  }
+
+  function hidePopup() {
+    $("#popup").removeClass("show");
+  }
 
 });
 
