@@ -178,10 +178,10 @@ $(function () {
   $(".tone-name").css('visibility', 'hidden');
   setupfretBoardReaction();
 
-  function setupfretBoardReaction(interactive_mode = true) {
+  function setupfretBoardReaction(_hide_tone_name = true) {
 
-    if (interactive_mode) {
-      $(".flet-cell").on("mousedown", function () {
+    if (_hide_tone_name) {
+      $(".flet-cell").on("mousedown touchstart", function (e) {
         if ($(this).hasClass("dimm1") | $(this).hasClass("dimm2")) return;
         const _tone = $(this).find("span");
         const _tone_number = string_value_to_num[$(this).siblings(".str-num").find("input").data("str_number")] +
@@ -193,21 +193,26 @@ $(function () {
         _tone.css('visibility', 'visible');
         console.log(_tone.text());
         checkAnswer(_tone.text());
+        e.preventDefault();
       });
 
-      $(".flet-cell").on("mouseup", function () {
+      $(".flet-cell").on("mouseup touchend", function (e) {
         $(this).find("span").css('visibility', 'hidden');
+        e.preventDefault();
+
       });
 
-      $(".flet-cell").on("mouseleave", function () {
+      $(".flet-cell").on("mouseleave", function (e) {
         $(this).find("span").css('visibility', 'hidden');
+        e.preventDefault();
       });
       return;
-    } else { //practice to rhythm mode
-      $(".flet-cell").on("mousedown", function () {
+    } else { //show tone name mode
+      $(".flet-cell").on("mousedown touchstart", function (e) {
         if ($(this).hasClass("dimm1") | $(this).hasClass("dimm2")) return;
         const _tone = $(this).find("span");
         checkAnswer(_tone.text());
+        e.preventDefault();
       });
 
       $(".flet-cell").off("mouseup");
