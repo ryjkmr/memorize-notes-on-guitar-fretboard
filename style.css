@@ -135,7 +135,7 @@ td.pos-0.str6 {
 .flet-cell {
 
   text-align: center;
-  color:gray;
+  color: gray;
   font-size: xx-large;
   font-weight: bold;
   text-shadow:
@@ -161,6 +161,16 @@ td.pos-0.str6 {
 #question {
   font-size: 300%;
   text-align: center;
+}
+
+#nextQuestion {
+  font-size: 300%;
+  color: gray;
+  margin-left: 1em;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 .control {
@@ -219,7 +229,7 @@ input[type=checkbox]:not(.checkeboxlg) {
 }
 
 #popup {
-  background-color: white; 
+  background-color: white;
   font-size: 400%;
   font-weight: 900;
   color: red;

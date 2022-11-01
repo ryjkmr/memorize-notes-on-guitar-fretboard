@@ -64,6 +64,13 @@ $(function () {
     if (play_count >= 0) {//カウントインの処理
       if (play_count % 4 === 0) {
         $("#question").text(questions.get);
+        $("#nextQuestion").text("   " + questions.next);
+        if ($("#showNextTone").prop("checked")) {
+          $("#nextQuestion").removeClass("hide")
+        }
+        else {
+          $("#nextQuestion").addClass("hide");
+        }
         play_target_note($("#question").text(), 0);
       }
     }
@@ -99,6 +106,7 @@ $(function () {
     }
 
     _shuffle() {
+      if (this._data.length === 1) return;
       const _lastQuestion = this._data[this._counter];
       for (let _i = this._data.length - 1; _i > 0; _i--) {
         let _j = Math.floor(Math.random() * (_i + 1)); // 0 から i のランダムなインデックス
@@ -111,7 +119,7 @@ $(function () {
       const _result = this._data[this._counter];
       if (this._counter === (this._data.length - 1)) {
         this._shuffle();
-        this._counter = 0
+        this._counter = 0;
       } else {
         this._counter++;
       }
@@ -144,7 +152,14 @@ $(function () {
     if (questions.data.length < 1) return false;
     if (update) {
       $("#question").text(questions.get);
-      play_target_note($("#question").text());
+      $("#nextQuestion").text(questions.next);
+      if ($("#showNextTone").prop("checked")) {
+        $("#nextQuestion").removeClass("hide")
+      }
+      else {
+        $("#nextQuestion").addClass("hide");
+      }
+    play_target_note($("#question").text());
     }
     return true;
   }
@@ -173,6 +188,17 @@ $(function () {
       setupfretBoardReaction();
     };
   });
+
+  // $("#showNextTone").change(function () {
+  //   if ($(this).prop('checked')) {
+  //     $("#nextQuestion").removeClass("hide");
+  //   } else {
+  //     $("#nextQuestion").addClass("hide");
+  //   };
+  // });
+
+
+
 
 
   $(".tone-name").css('visibility', 'hidden');
@@ -302,6 +328,7 @@ $(function () {
     $("#startBtn").prop("disabled", false);
     isTempoOn = false;
     $("#question").text("click to start");
+    $("#nextQuestion").addClass("hide");
   }
 
   $("#test").mousedown(function () {
@@ -327,7 +354,14 @@ $(function () {
     if (a === $("#question").text()) {
       if (isTempoOn) return;
       $("#question").text(questions.get);
-      play_target_note($("#question").text());
+      $("#nextQuestion").text(questions.next);
+      if ($("#showNextTone").prop("checked")) {
+        $("#nextQuestion").removeClass("hide")
+      }
+      else {
+        $("#nextQuestion").addClass("hide");
+      }
+    play_target_note($("#question").text());
     }
   }
 
