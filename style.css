@@ -113,7 +113,7 @@ td.pos-0.str6 {
 
 
 
-.dimm1 span, .dimm2 span {
+.dimm1 span, .dimm2 span, .dimm3 span {
   visibility: hidden !important;
 }
 
@@ -166,6 +166,7 @@ td.pos-0.str6 {
 #nextQuestion {
   font-size: 300%;
   color: gray;
+  opacity: 0.5;
   margin-left: 1em;
 }
 

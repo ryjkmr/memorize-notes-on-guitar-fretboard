@@ -159,7 +159,7 @@ $(function () {
       else {
         $("#nextQuestion").addClass("hide");
       }
-    play_target_note($("#question").text());
+      play_target_note($("#question").text());
     }
     return true;
   }
@@ -177,6 +177,34 @@ $(function () {
       }
     }
   }
+
+
+  function drawToneName2() {
+    const _selection = ($("input[name=disp-type]:checked").val());
+
+    switch (_selection) {
+      case "sharp":
+        break;
+
+      case "flat":
+        break;
+
+      case "no_semitone":
+        break;
+    }
+
+    if ($("input[name=disp-type]:checked").val() == "flat") {
+      for (let k of key_flat) {
+        $("." + k + " span").text(k);
+      }
+    } else {
+      for (let k of key_sharp) {
+        $("." + k + " span").text(k.replace("s", "#"));
+      }
+    }
+  }
+
+
 
 
   $("#showToneName").change(function () {
@@ -304,6 +332,15 @@ $(function () {
     stopReset();
   });
 
+  $('#noSemitone').on("change", function () {
+    if ($(this).prop('checked')) {
+      $('.semitone').addClass('dimm3');
+    } else {
+      $('.semitone').removeClass('dimm3');
+    };
+    stopReset();
+  });
+
 
   $('#startBtn').mousedown(function () {
     if (!reloadQuestions(false)) return;
@@ -343,7 +380,7 @@ $(function () {
   function listUpQuestion() {
     const array = [];
     $(".tone-name").each(function (index, element) {
-      if (!$(element).parent().hasClass("dimm1") & !$(element).parent().hasClass("dimm2")) {
+      if (!$(element).parent().hasClass("dimm1") & !$(element).parent().hasClass("dimm2") & !$(element).parent().hasClass("dimm3")) {
         array.push($(element).text());
       }
     });
@@ -361,7 +398,7 @@ $(function () {
       else {
         $("#nextQuestion").addClass("hide");
       }
-    play_target_note($("#question").text());
+      play_target_note($("#question").text());
     }
   }
 
