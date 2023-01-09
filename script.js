@@ -102,7 +102,7 @@ $(function () {
       return this._data[i];
     }
     get data() {
-      return questions._data;
+      return this._data;
     }
 
     _shuffle() {
